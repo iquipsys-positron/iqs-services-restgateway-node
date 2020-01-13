@@ -1,0 +1,1 @@
+export { RestGatewayServiceFactory } from './RestGatewayServiceFactory';
