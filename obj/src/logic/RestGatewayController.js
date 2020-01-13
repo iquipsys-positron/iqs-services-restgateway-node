@@ -2,20 +2,20 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 let _ = require('lodash');
 let async = require('async');
-const pip_services_commons_node_1 = require("pip-services-commons-node");
-const pip_services_commons_node_2 = require("pip-services-commons-node");
-const pip_services_components_node_1 = require("pip-services-components-node");
-const pip_services_components_node_2 = require("pip-services-components-node");
-const pip_services_commons_node_3 = require("pip-services-commons-node");
-const pip_services_commons_node_4 = require("pip-services-commons-node");
+const pip_services3_commons_node_1 = require("pip-services3-commons-node");
+const pip_services3_commons_node_2 = require("pip-services3-commons-node");
+const pip_services3_components_node_1 = require("pip-services3-components-node");
+const pip_services3_components_node_2 = require("pip-services3-components-node");
+const pip_services3_commons_node_3 = require("pip-services3-commons-node");
+const pip_services3_commons_node_4 = require("pip-services3-commons-node");
 const iqs_clients_devices_node_1 = require("iqs-clients-devices-node");
 const iqs_clients_devices_node_2 = require("iqs-clients-devices-node");
 const RestGatewayCommandSet_1 = require("./RestGatewayCommandSet");
 class RestGatewayController {
     constructor() {
-        this._logger = new pip_services_components_node_1.CompositeLogger();
-        this._counters = new pip_services_components_node_2.CompositeCounters();
-        this._dependencyResolver = new pip_services_commons_node_2.DependencyResolver(RestGatewayController._defaultConfig);
+        this._logger = new pip_services3_components_node_1.CompositeLogger();
+        this._counters = new pip_services3_components_node_2.CompositeCounters();
+        this._dependencyResolver = new pip_services3_commons_node_2.DependencyResolver(RestGatewayController._defaultConfig);
     }
     configure(config) {
         this._dependencyResolver.configure(config);
@@ -34,11 +34,11 @@ class RestGatewayController {
     }
     resolveDevice(orgId, udi, callback) {
         if (orgId == '') {
-            callback(new pip_services_commons_node_3.BadRequestException('mqtt-gateway', 'UNKNOWN_ORGANIZATION', 'Cannot determine organization'), null);
+            callback(new pip_services3_commons_node_3.BadRequestException('mqtt-gateway', 'UNKNOWN_ORGANIZATION', 'Cannot determine organization'), null);
             return;
         }
         if (udi == '') {
-            callback(new pip_services_commons_node_3.BadRequestException('mqtt-gateway', 'NO_DEVICE_UDI', 'Device UDI is not defined'), null);
+            callback(new pip_services3_commons_node_3.BadRequestException('mqtt-gateway', 'NO_DEVICE_UDI', 'Device UDI is not defined'), null);
             return;
         }
         this._devicesClient.getOrCreateDevice('mqtt-gateway', orgId, iqs_clients_devices_node_1.DeviceTypeV1.Unknown, null, udi, (err, device) => {
@@ -54,7 +54,7 @@ class RestGatewayController {
     }
     updateStatus(message, callback) {
         let device;
-        message.time = pip_services_commons_node_4.DateTimeConverter.toDateTimeWithDefault(message.time, new Date());
+        message.time = pip_services3_commons_node_4.DateTimeConverter.toDateTimeWithDefault(message.time, new Date());
         async.series([
             (callback) => {
                 this.resolveDevice(message.org_id, message.device_udi, (err, data) => {
@@ -98,5 +98,5 @@ class RestGatewayController {
     }
 }
 exports.RestGatewayController = RestGatewayController;
-RestGatewayController._defaultConfig = pip_services_commons_node_1.ConfigParams.fromTuples('dependencies.connector', 'iqs-services-restgateway:connector:*:*:1.0', 'dependencies.devices', 'iqs-services-devices:client:*:*:1.0', 'dependencies.state-updates', 'iqs-services-stateupdates:client:*:*:1.0');
+RestGatewayController._defaultConfig = pip_services3_commons_node_1.ConfigParams.fromTuples('dependencies.connector', 'iqs-services-restgateway:connector:*:*:1.0', 'dependencies.devices', 'iqs-services-devices:client:*:*:1.0', 'dependencies.state-updates', 'iqs-services-stateupdates:client:*:*:1.0');
 //# sourceMappingURL=RestGatewayController.js.map

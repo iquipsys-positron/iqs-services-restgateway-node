@@ -1,6 +1,6 @@
-import { ObjectSchema } from 'pip-services-commons-node';
-import { ArraySchema } from 'pip-services-commons-node';
-import { TypeCode } from 'pip-services-commons-node';
+import { ObjectSchema } from 'pip-services3-commons-node';
+import { ArraySchema } from 'pip-services3-commons-node';
+import { TypeCode } from 'pip-services3-commons-node';
 
 import { StatusMessageDataValueV1Schema } from './StatusMessageDataValueV1Schema'
 

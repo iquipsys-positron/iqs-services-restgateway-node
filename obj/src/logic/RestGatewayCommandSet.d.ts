@@ -1,4 +1,4 @@
-import { CommandSet } from 'pip-services-commons-node';
+import { CommandSet } from 'pip-services3-commons-node';
 import { IRestGatewayController } from './IRestGatewayController';
 export declare class RestGatewayCommandSet extends CommandSet {
     private _logic;

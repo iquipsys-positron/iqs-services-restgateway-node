@@ -1,6 +1,6 @@
-import { Descriptor } from 'pip-services-commons-node';
-import { IReferences } from 'pip-services-commons-node';
-import { CommandableLambdaFunction } from 'pip-services-aws-node';
+import { Descriptor } from 'pip-services3-commons-node';
+import { IReferences } from 'pip-services3-commons-node';
+import { CommandableLambdaFunction } from 'pip-services3-aws-node';
 
 import { OrganizationsClientFactory } from 'pip-clients-organizations-node';
 import { DevicesClientFactory } from 'iqs-clients-devices-node';

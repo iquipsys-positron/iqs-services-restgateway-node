@@ -1,22 +1,22 @@
 let _ = require('lodash');
 let async = require('async');
 
-import { ConfigParams } from 'pip-services-commons-node';
-import { IConfigurable } from 'pip-services-commons-node';
-import { IReferences } from 'pip-services-commons-node';
-import { Descriptor } from 'pip-services-commons-node';
-import { IReferenceable } from 'pip-services-commons-node';
-import { DependencyResolver } from 'pip-services-commons-node';
-import { FilterParams } from 'pip-services-commons-node';
-import { PagingParams } from 'pip-services-commons-node';
-import { ICommandable } from 'pip-services-commons-node';
-import { CommandSet } from 'pip-services-commons-node';
-import { CompositeLogger } from 'pip-services-components-node';
-import { CompositeCounters } from 'pip-services-components-node';
-import { BadRequestException } from 'pip-services-commons-node';
-import { NotFoundException } from 'pip-services-commons-node';
-import { InvalidStateException } from 'pip-services-commons-node';
-import { DateTimeConverter } from 'pip-services-commons-node';
+import { ConfigParams } from 'pip-services3-commons-node';
+import { IConfigurable } from 'pip-services3-commons-node';
+import { IReferences } from 'pip-services3-commons-node';
+import { Descriptor } from 'pip-services3-commons-node';
+import { IReferenceable } from 'pip-services3-commons-node';
+import { DependencyResolver } from 'pip-services3-commons-node';
+import { FilterParams } from 'pip-services3-commons-node';
+import { PagingParams } from 'pip-services3-commons-node';
+import { ICommandable } from 'pip-services3-commons-node';
+import { CommandSet } from 'pip-services3-commons-node';
+import { CompositeLogger } from 'pip-services3-components-node';
+import { CompositeCounters } from 'pip-services3-components-node';
+import { BadRequestException } from 'pip-services3-commons-node';
+import { NotFoundException } from 'pip-services3-commons-node';
+import { InvalidStateException } from 'pip-services3-commons-node';
+import { DateTimeConverter } from 'pip-services3-commons-node';
 
 import { IDevicesClientV1 } from 'iqs-clients-devices-node';
 import { DeviceV1 } from 'iqs-clients-devices-node';
